@@ -43,14 +43,14 @@ public class OrderStatusUpdateAction extends AbstractController {
 					
 					if("3".equals(ovo.getOrderStatus()) || "4".equals(ovo.getOrderStatus())) {
 						// 배송중 혹은 배송 완료의 경우
-						String api_key = "NCS2P3AZWA0G2FOH";
-						String api_secret = "HOM1BWQXFHYIKO6YJIANMLFIX6GRHDXN";
+						String api_key = ""; // 보안 상 삭제
+						String api_secret = ""; // 보안 상 삭제
 						Message coolsms = new Message(api_key, api_secret);
 
 						// == 4개 파라미터(to, from, type, text)는 필수사항이다. ==
 						HashMap<String, String> paraMapToSMS = new HashMap<>();
 						paraMapToSMS.put("to", ovo.getTel()); // 수신번호
-						paraMapToSMS.put("from", "01045807291"); // 발신번호
+						paraMapToSMS.put("from", ""); // 발신번호 _ 보안 상 삭제
 						paraMapToSMS.put("type", "LMS"); // Message type ( SMS(단문), LMS(장문), MMS, ATA )
 						
 						String smsData = "[GENTLE MONSTER] " + ovo.getFullName() + "님 께서 주문하신 주문번호 #" + paraMap.get("orderId") + "는 현재 CJ대한통운 택배로 ";
